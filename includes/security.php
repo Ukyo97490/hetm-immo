@@ -3,7 +3,7 @@
  * H&M Immobilier — Fonctions de sécurité centralisées
  */
 
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/../config.php';
 
 // ════════════════════════════════════════════════════════════
 //  CSRF — Génération & validation du token
