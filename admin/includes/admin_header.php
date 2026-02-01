@@ -2,7 +2,7 @@
 /**
  * Admin — Header partageé (inclus dans chaque page admin)
  */
-$currentUser = get_current_user();
+$currentUser = get_logged_in_user();
 $currentPage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
 ?>
 <!DOCTYPE html>

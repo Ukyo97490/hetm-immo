@@ -164,7 +164,7 @@ function session_cookie_name(): string
 /**
  * Retourne l'utilisateur connecté ou null.
  */
-function get_current_user(): ?array
+function get_logged_in_user(): ?array
 {
     if (!isset($_SESSION['user_id'])) return null;
 
