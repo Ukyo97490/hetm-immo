@@ -13,8 +13,8 @@ $errors    = [];
 
 if ($isEditing) {
     $user = $model->findById($editId);
-    if ($user === null) { $_SESSION['flash_error']='Utilisateur introuvable.'; header('Location: /admin/users.php'); exit; }
-    if ((int)$editId === (int)$_SESSION['user_id']) { $_SESSION['flash_error']='Utilisez la page Profil pour vous modifier.'; header('Location: /admin/users.php'); exit; }
+    if ($user === null) { $_SESSION['flash_error']='Utilisateur introuvable.'; header('Location: users.php'); exit; }
+    if ((int)$editId === (int)$_SESSION['user_id']) { $_SESSION['flash_error']='Utilisez la page Profil pour vous modifier.'; header('Location: users.php'); exit; }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -66,10 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             else {
                 audit_log($_SESSION['user_id'], 'create_user', "user:$newId", "Utilisateur créé: $email (rôle: $role)");
                 $_SESSION['flash_success'] = 'Utilisateur créé avec succès.';
-                header('Location: /admin/users.php'); exit;
+                header('Location: users.php'); exit;
             }
         }
-        if (empty($errors)) { header('Location: /admin/users.php'); exit; }
+        if (empty($errors)) { header('Location: users.php'); exit; }
     }
 }
 

@@ -15,9 +15,9 @@ $errors    = [];
 
 if ($isEditing) {
     $property = $model->findById($editId);
-    if ($property === null) { $_SESSION['flash_error']='Bien introuvable.'; header('Location: /admin/properties.php'); exit; }
+    if ($property === null) { $_SESSION['flash_error']='Bien introuvable.'; header('Location: properties.php'); exit; }
     if (!is_admin() && (int)$property['managed_by'] !== (int)$_SESSION['user_id']) {
-        $_SESSION['flash_error']='Vous n\'êtes pas autorisé à modifier ce bien.'; header('Location: /admin/properties.php'); exit;
+        $_SESSION['flash_error']='Vous n\'êtes pas autorisé à modifier ce bien.'; header('Location: properties.php'); exit;
     }
 }
 
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             audit_log($_SESSION['user_id'], 'create_property', "property:$newId", "Bien créé");
             $_SESSION['flash_success'] = 'Bien créé avec succès.';
         }
-        header('Location: /admin/properties.php'); exit;
+        header('Location: properties.php'); exit;
     }
 }
 

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 rate_limit_reset($rlKey);
                 session_login($user);
                 audit_log((int)$user['id'], 'login', "user:{$user['id']}", 'Connexion réussie');
-                header('Location: /admin/dashboard.php');
+                header('Location: dashboard.php');
                 exit;
             }
         }
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isset($_SESSION['user_id'])) {
-    header('Location: /admin/dashboard.php');
+    header('Location: dashboard.php');
     exit;
 }
 ?>
@@ -85,6 +85,14 @@ if (isset($_SESSION['user_id'])) {
                 </div>
                 <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Se connecter</button>
             </form>
+            <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.15);">
+                <p style="font-size:12px;color:rgba(255,255,255,0.45);text-align:center;margin-bottom:10px;">Connexion rapide (développement)</p>
+                <button type="button" class="btn-login" style="background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.4);font-size:13px;padding:10px;" onclick="
+                    document.getElementById('email').value='admin@hm-immobilier.fr';
+                    document.getElementById('password').value='admin123';
+                    document.querySelector('.login-form').submit();
+                "><i class="fas fa-bolt"></i> Connexion Admin par défaut</button>
+            </div>
         </div>
         <div class="back-link"><a href="../index.php"><i class="fas fa-arrow-left"></i> Retour au site</a></div>
     </div>

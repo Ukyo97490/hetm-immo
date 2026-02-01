@@ -189,7 +189,7 @@ function is_admin(): bool
 function require_auth(): void
 {
     if (!isset($_SESSION['user_id'])) {
-        header('Location: /admin/login.php');
+        header('Location: login.php');
         exit;
     }
 }
@@ -202,7 +202,7 @@ function require_admin(): void
     require_auth();
     if (!is_admin()) {
         http_response_code(403);
-        header('Location: /admin/dashboard.php');
+        header('Location: dashboard.php');
         exit;
     }
 }

@@ -36,31 +36,31 @@ $currentPage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
         <ul>
             <li class="nav-section-label">Principal</li>
             <li class="<?= $currentPage === 'dashboard' ? 'active' : '' ?>">
-                <a href="../dashboard.php"><i class="fas fa-th-large"></i><span>Tableau de bord</span></a>
+                <a href="dashboard.php"><i class="fas fa-th-large"></i><span>Tableau de bord</span></a>
             </li>
             <li class="<?= in_array($currentPage, ['properties','property-form']) ? 'active' : '' ?>">
-                <a href="../properties.php"><i class="fas fa-home"></i><span>Biens Immobiliers</span></a>
+                <a href="properties.php"><i class="fas fa-home"></i><span>Biens Immobiliers</span></a>
             </li>
             <li class="<?= $currentPage === 'property-form' && !isset($_GET['edit']) ? 'active' : '' ?>">
-                <a href="../property-form.php"><i class="fas fa-plus-circle"></i><span>Ajouter un Bien</span></a>
+                <a href="property-form.php"><i class="fas fa-plus-circle"></i><span>Ajouter un Bien</span></a>
             </li>
 
             <?php if (is_admin()): ?>
             <li class="nav-section-label">Administration</li>
             <li class="<?= $currentPage === 'users' || ($currentPage === 'user-form' && isset($_GET['edit'])) ? 'active' : '' ?>">
-                <a href="../users.php"><i class="fas fa-users"></i><span>Utilisateurs</span></a>
+                <a href="users.php"><i class="fas fa-users"></i><span>Utilisateurs</span></a>
             </li>
             <li class="<?= $currentPage === 'user-form' && !isset($_GET['edit']) ? 'active' : '' ?>">
-                <a href="../user-form.php"><i class="fas fa-user-plus"></i><span>Créer Utilisateur</span></a>
+                <a href="user-form.php"><i class="fas fa-user-plus"></i><span>Créer Utilisateur</span></a>
             </li>
             <li class="<?= $currentPage === 'audit' ? 'active' : '' ?>">
-                <a href="../audit.php"><i class="fas fa-shield-alt"></i><span>Journal Audit</span></a>
+                <a href="audit.php"><i class="fas fa-shield-alt"></i><span>Journal Audit</span></a>
             </li>
             <?php endif; ?>
 
             <li class="nav-section-label">Compte</li>
             <li class="<?= $currentPage === 'profile' ? 'active' : '' ?>">
-                <a href="../profile.php"><i class="fas fa-user-circle"></i><span>Mon Profil</span></a>
+                <a href="profile.php"><i class="fas fa-user-circle"></i><span>Mon Profil</span></a>
             </li>
         </ul>
     </nav>
@@ -71,7 +71,7 @@ $currentPage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
             <span class="user-name"><?= htmlspecialchars($currentUser['email'], ENT_QUOTES | ENT_HTML5) ?></span>
             <span class="user-role <?= $currentUser['role'] === 'admin' ? 'role-admin' : 'role-agent' ?>"><?= ucfirst($currentUser['role']) ?></span>
         </div>
-        <a href="../logout.php" class="logout-btn" title="Déconnecter"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="logout.php" class="logout-btn" title="Déconnecter"><i class="fas fa-sign-out-alt"></i></a>
     </div>
 </aside>
 
@@ -88,7 +88,7 @@ $currentPage = basename($_SERVER['SCRIPT_FILENAME'], '.php');
             <h1 class="topbar-title"><?= htmlspecialchars($pageTitle ?? 'Dashboard', ENT_QUOTES | ENT_HTML5) ?></h1>
         </div>
         <div class="topbar-right">
-            <a href="../../index.php" target="_blank" class="topbar-site-link"><i class="fas fa-globe"></i><span>Voir le site</span></a>
+            <a href="../index.php" target="_blank" class="topbar-site-link"><i class="fas fa-globe"></i><span>Voir le site</span></a>
             <div class="topbar-avatar"><?= strtoupper(substr($currentUser['email'], 0, 2)) ?></div>
         </div>
     </header>

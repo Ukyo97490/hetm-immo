@@ -8,10 +8,10 @@ require_once __DIR__ . '/includes/PropertyModel.php';
 $model      = new PropertyModel();
 $propertyId = sanitize_int($_GET['id'] ?? null);
 
-if ($propertyId === null) { header('Location: /nos-biens.php'); exit; }
+if ($propertyId === null) { header('Location: nos-biens.php'); exit; }
 
 $property = $model->findById($propertyId);
-if ($property === null || $property['status'] !== 'active') { header('Location: /nos-biens.php'); exit; }
+if ($property === null || $property['status'] !== 'active') { header('Location: nos-biens.php'); exit; }
 
 $images = $model->getImages($propertyId);
 $imgUrl = $property['main_image'] ? '/uploads/'.$property['main_image'] : 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2070';

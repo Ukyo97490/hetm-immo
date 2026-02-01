@@ -98,15 +98,6 @@ CREATE TABLE IF NOT EXISTS audit_log (
 );
 
 -- ──────────────────────────────────────────────────────────
--- Premier compte admin (mot de passe par défaut: "admin123")
--- À changer immédiatement après première connexion.
--- Le hash ci-dessous correspond à password_hash('admin123', PASSWORD_BCRYPT)
+-- Premier compte admin : créé automatiquement par setup-admin.php
+-- Rendez-vous sur /setup-admin.php après avoir exécuté ce fichier SQL.
 -- ──────────────────────────────────────────────────────────
-INSERT INTO users (email, password_hash, first_name, last_name, role)
-VALUES (
-    'admin@hm-immobilier.fr',
-    '$2y$10$YourHashHereReplace',  -- REMPLACER avec un hash valide en production
-    'Admin',
-    'Principal',
-    'admin'
-);

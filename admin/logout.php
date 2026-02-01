@@ -5,5 +5,5 @@ if (isset($_SESSION['user_id'])) {
     audit_log($_SESSION['user_id'], 'logout', "user:{$_SESSION['user_id']}", 'Déconnexion');
 }
 session_logout();
-header('Location: /admin/login.php');
+header('Location: login.php');
 exit;
