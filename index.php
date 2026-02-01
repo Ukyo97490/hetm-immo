@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -22,11 +22,11 @@
     <nav>
         <div class="logo">H&M <span>Immobilier</span></div>
         <ul class="nav-links">
-            <li><a href="/index.php" class="active">Accueil</a></li>
-            <li><a href="/nos-biens.php">Nos Biens</a></li>
-            <li><a href="/services.php">Services</a></li>
-            <li><a href="/a-propos.php">À Propos</a></li>
-            <li><a href="/contact.php">Contact</a></li>
+            <li><a href="index.php" class="active">Accueil</a></li>
+            <li><a href="nos-biens.php">Nos Biens</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="a-propos.php">À Propos</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -34,11 +34,11 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu">
     <div class="mobile-menu-bar">
-        <div class="mobile-menu-item active"><a href="/index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
-        <div class="mobile-menu-item"><a href="/nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
-        <div class="mobile-menu-item"><a href="/services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
-        <div class="mobile-menu-item"><a href="/a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
-        <div class="mobile-menu-item"><a href="/contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
+        <div class="mobile-menu-item active"><a href="index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
+        <div class="mobile-menu-item"><a href="nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
+        <div class="mobile-menu-item"><a href="services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
+        <div class="mobile-menu-item"><a href="a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
+        <div class="mobile-menu-item"><a href="contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
     </div>
 </div>
 
@@ -49,7 +49,7 @@
             <h1>Trouvez la propriété de vos rêves</h1>
             <p>Découvrez nos biens immobiliers d'exception, sélectionnés pour leur prestige et leur emplacement idéal.</p>
             <div class="search-form">
-                <form method="GET" action="/nos-biens.php">
+                <form method="GET" action="nos-biens.php">
                     <div class="form-row">
                         <div class="form-group">
                             <input type="text" name="search" placeholder="Localisation">
@@ -83,7 +83,7 @@
         <h2 class="section-title">Nos Biens en Vedette</h2>
         <div class="properties-grid" id="featuredProperties"></div>
         <div style="text-align:center; margin-top:40px;">
-            <a href="/nos-biens.php" class="btn-pub btn-pub-outline">Voir tous les biens</a>
+            <a href="nos-biens.php" class="btn-pub btn-pub-outline">Voir tous les biens</a>
         </div>
     </div>
 </section>
@@ -99,7 +99,7 @@
                     <div class="service-icon"><i class="fas fa-home"></i></div>
                     <h3>Biens d'Exception</h3>
                     <p>Nous sélectionnons des propriétés uniques pour leur prestige, leur emplacement et leur potentiel.</p>
-                    <a href="/services.php" class="service-btn">En savoir plus</a>
+                    <a href="services.php" class="service-btn">En savoir plus</a>
                 </div>
             </div>
             <div class="service-card">
@@ -108,7 +108,7 @@
                     <div class="service-icon"><i class="fas fa-handshake"></i></div>
                     <h3>Service Personnalisé</h3>
                     <p>Un accompagnement sur mesure pour chaque client, du premier contact à la signature.</p>
-                    <a href="/services.php" class="service-btn">En savoir plus</a>
+                    <a href="services.php" class="service-btn">En savoir plus</a>
                 </div>
             </div>
             <div class="service-card">
@@ -117,7 +117,7 @@
                     <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Expertise & Confiance</h3>
                     <p>10 ans d'expérience dans l'immobilier de luxe et des centaines de clients satisfaits.</p>
-                    <a href="/services.php" class="service-btn">En savoir plus</a>
+                    <a href="services.php" class="service-btn">En savoir plus</a>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@
     <div class="container">
         <h2>Prêt à trouver votre prochain bien ?</h2>
         <p>Notre équipe est à votre disposition pour vous guider dans votre projet immobilier, que ce soit pour acheter, vendre ou investir.</p>
-        <a href="/contact.php" class="cta-btn">Nous contacter</a>
+        <a href="contact.php" class="cta-btn">Nous contacter</a>
     </div>
 </section>
 
@@ -138,8 +138,8 @@
     <div class="container">
         <div class="footer-links">
             <a href="#">Mentions légales</a>
-            <a href="/contact.php">Contact</a>
-            <a href="/admin/login.php" style="color:rgba(255,255,255,0.3); font-size:12px;">Administration</a>
+            <a href="contact.php">Contact</a>
+            <a href="admin/login.php" style="color:rgba(255,255,255,0.3); font-size:12px;">Administration</a>
         </div>
         <p class="copyright">© 2025 H&M Immobilier. Tous droits réservés.</p>
     </div>
@@ -160,7 +160,7 @@
             const imgUrl = p.main_image ? '/uploads/' + p.main_image : 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2070';
             grid.innerHTML += `
                 <div class="property-card">
-                    <a href="/bien.php?id=${parseInt(p.id)}">
+                    <a href="bien.php?id=${parseInt(p.id)}">
                         <img src="${imgUrl}" alt="${p.title.replace(/"/g,'&quot;')}">
                         <div class="property-info">
                             <h3>${p.title}</h3>

@@ -26,7 +26,7 @@ $imgUrl = $property['main_image'] ? '/uploads/'.$property['main_image'] : 'https
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .bien-hero { background-image: url('<?= htmlspecialchars($imgUrl, ENT_QUOTES|ENT_HTML5) ?>'); }
     </style>
@@ -38,22 +38,22 @@ $imgUrl = $property['main_image'] ? '/uploads/'.$property['main_image'] : 'https
     <nav>
         <div class="logo">H&M <span>Immobilier</span></div>
         <ul class="nav-links">
-            <li><a href="/index.php">Accueil</a></li>
-            <li><a href="/nos-biens.php" class="active">Nos Biens</a></li>
-            <li><a href="/services.php">Services</a></li>
-            <li><a href="/a-propos.php">À Propos</a></li>
-            <li><a href="/contact.php">Contact</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="nos-biens.php" class="active">Nos Biens</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="a-propos.php">À Propos</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
 </header>
 
 <div class="mobile-menu">
     <div class="mobile-menu-bar">
-        <div class="mobile-menu-item"><a href="/index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
-        <div class="mobile-menu-item active"><a href="/nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
-        <div class="mobile-menu-item"><a href="/services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
-        <div class="mobile-menu-item"><a href="/a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
-        <div class="mobile-menu-item"><a href="/contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
+        <div class="mobile-menu-item"><a href="index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
+        <div class="mobile-menu-item active"><a href="nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
+        <div class="mobile-menu-item"><a href="services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
+        <div class="mobile-menu-item"><a href="a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
+        <div class="mobile-menu-item"><a href="contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
     </div>
 </div>
 
@@ -128,7 +128,7 @@ $imgUrl = $property['main_image'] ? '/uploads/'.$property['main_image'] : 'https
                 <h2 style="margin-top:36px;">Galerie</h2>
                 <div class="bien-gallery">
                     <?php foreach ($images as $img): ?>
-                    <img src="/uploads/<?= htmlspecialchars($img['file_path'], ENT_QUOTES|ENT_HTML5) ?>" alt="Image du bien">
+                    <img src="uploads/<?= htmlspecialchars($img['file_path'], ENT_QUOTES|ENT_HTML5) ?>" alt="Image du bien">
                     <?php endforeach; ?>
                 </div>
                 <?php endif; ?>
@@ -148,7 +148,7 @@ $imgUrl = $property['main_image'] ? '/uploads/'.$property['main_image'] : 'https
                 <div class="sidebar-item"><span class="label">Chambres</span><span class="value"><?= (int)$property['bedrooms'] ?></span></div>
                 <?php endif; ?>
                 <div class="sidebar-item"><span class="label">Gestionnaire</span><span class="value"><?= htmlspecialchars($property['manager_name'], ENT_QUOTES|ENT_HTML5) ?></span></div>
-                <a href="/contact.php" class="btn-contact"><i class="fas fa-envelope" style="margin-right:8px;"></i>Contacter un Agent</a>
+                <a href="contact.php" class="btn-contact"><i class="fas fa-envelope" style="margin-right:8px;"></i>Contacter un Agent</a>
             </aside>
         </div>
     </div>
@@ -159,8 +159,8 @@ $imgUrl = $property['main_image'] ? '/uploads/'.$property['main_image'] : 'https
     <div class="container">
         <div class="footer-links">
             <a href="#">Mentions légales</a>
-            <a href="/contact.php">Contact</a>
-            <a href="/admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
+            <a href="contact.php">Contact</a>
+            <a href="admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
         </div>
         <p class="copyright">© 2025 H&M Immobilier. Tous droits réservés.</p>
     </div>

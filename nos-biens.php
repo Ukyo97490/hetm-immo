@@ -34,7 +34,7 @@ if ($maxPrice !== null && $maxPrice > 0) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -43,22 +43,22 @@ if ($maxPrice !== null && $maxPrice > 0) {
     <nav>
         <div class="logo">H&M <span>Immobilier</span></div>
         <ul class="nav-links">
-            <li><a href="/index.php">Accueil</a></li>
-            <li><a href="/nos-biens.php" class="active">Nos Biens</a></li>
-            <li><a href="/services.php">Services</a></li>
-            <li><a href="/a-propos.php">À Propos</a></li>
-            <li><a href="/contact.php">Contact</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="nos-biens.php" class="active">Nos Biens</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="a-propos.php">À Propos</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
 </header>
 
 <div class="mobile-menu">
     <div class="mobile-menu-bar">
-        <div class="mobile-menu-item"><a href="/index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
-        <div class="mobile-menu-item active"><a href="/nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
-        <div class="mobile-menu-item"><a href="/services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
-        <div class="mobile-menu-item"><a href="/a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
-        <div class="mobile-menu-item"><a href="/contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
+        <div class="mobile-menu-item"><a href="index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
+        <div class="mobile-menu-item active"><a href="nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
+        <div class="mobile-menu-item"><a href="services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
+        <div class="mobile-menu-item"><a href="a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
+        <div class="mobile-menu-item"><a href="contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
     </div>
 </div>
 
@@ -73,7 +73,7 @@ if ($maxPrice !== null && $maxPrice > 0) {
 <!-- Filters -->
 <section class="filters-section">
     <div class="container">
-        <form method="GET" action="/nos-biens.php">
+        <form method="GET" action="nos-biens.php">
             <div class="filter-form">
                 <div class="filter-group">
                     <input type="text" name="search" value="<?= htmlspecialchars($searchVal, ENT_QUOTES|ENT_HTML5) ?>" placeholder="Recherche (titre, lieu...)">
@@ -103,7 +103,7 @@ if ($maxPrice !== null && $maxPrice > 0) {
                 <?= $result['total'] ?> bien<?= $result['total'] !== 1 ? 's' : '' ?> trouvé<?= $result['total'] !== 1 ? 's' : '' ?>
             </p>
             <?php if ($searchVal || $typeVal || $maxPrice): ?>
-            <a href="/nos-biens.php" style="color:var(--gold);font-size:13px;"><i class="fas fa-times"></i> Réinitialiser les filtres</a>
+            <a href="nos-biens.php" style="color:var(--gold);font-size:13px;"><i class="fas fa-times"></i> Réinitialiser les filtres</a>
             <?php endif; ?>
         </div>
 
@@ -117,7 +117,7 @@ if ($maxPrice !== null && $maxPrice > 0) {
             if ($p['surface'])   $details[] = number_format((float)$p['surface'],0).' m²';
             ?>
             <div class="property-card">
-                <a href="/bien.php?id=<?= (int)$p['id'] ?>">
+                <a href="bien.php?id=<?= (int)$p['id'] ?>">
                     <img src="<?= htmlspecialchars($imgUrl, ENT_QUOTES|ENT_HTML5) ?>" alt="<?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_HTML5) ?>">
                     <div class="property-info">
                         <h3><?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_HTML5) ?></h3>
@@ -135,7 +135,7 @@ if ($maxPrice !== null && $maxPrice > 0) {
             <div style="grid-column:1/-1;text-align:center;padding:60px 20px;">
                 <i class="fas fa-home" style="font-size:48px;color:#ccc;margin-bottom:16px;display:block;"></i>
                 <p style="color:#888;font-size:16px;">Aucun bien ne correspond à vos critères.</p>
-                <a href="/nos-biens.php" style="color:var(--gold);margin-top:12px;display:inline-block;">Voir tous les biens</a>
+                <a href="nos-biens.php" style="color:var(--gold);margin-top:12px;display:inline-block;">Voir tous les biens</a>
             </div>
             <?php endif; ?>
         </div>
@@ -148,13 +148,13 @@ if ($maxPrice !== null && $maxPrice > 0) {
         ?>
         <div class="pagination-pub">
             <?php if ($page > 1): ?>
-            <a href="/nos-biens.php?<?= $baseParams ?><?= $sep ?>page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a>
+            <a href="nos-biens.php?<?= $baseParams ?><?= $sep ?>page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a>
             <?php endif; ?>
             <?php for ($i=1; $i<=$result['last_page']; $i++): ?>
-            <a href="/nos-biens.php?<?= $baseParams ?><?= $sep ?>page=<?= $i ?>" class="<?= $i===$page ? 'active' : '' ?>"><?= $i ?></a>
+            <a href="nos-biens.php?<?= $baseParams ?><?= $sep ?>page=<?= $i ?>" class="<?= $i===$page ? 'active' : '' ?>"><?= $i ?></a>
             <?php endfor; ?>
             <?php if ($page < $result['last_page']): ?>
-            <a href="/nos-biens.php?<?= $baseParams ?><?= $sep ?>page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a>
+            <a href="nos-biens.php?<?= $baseParams ?><?= $sep ?>page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a>
             <?php endif; ?>
         </div>
         <?php endif; ?>
@@ -166,7 +166,7 @@ if ($maxPrice !== null && $maxPrice > 0) {
     <div class="container">
         <h2>Intéressé par un bien ?</h2>
         <p>Contactez notre équipe pour un rendez-vous personnel et une visite sur site.</p>
-        <a href="/contact.php" class="cta-btn">Nous contacter</a>
+        <a href="contact.php" class="cta-btn">Nous contacter</a>
     </div>
 </section>
 
@@ -175,8 +175,8 @@ if ($maxPrice !== null && $maxPrice > 0) {
     <div class="container">
         <div class="footer-links">
             <a href="#">Mentions légales</a>
-            <a href="/contact.php">Contact</a>
-            <a href="/admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
+            <a href="contact.php">Contact</a>
+            <a href="admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
         </div>
         <p class="copyright">© 2025 H&M Immobilier. Tous droits réservés.</p>
     </div>

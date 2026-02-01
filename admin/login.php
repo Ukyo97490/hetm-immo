@@ -51,7 +51,7 @@ if (isset($_SESSION['user_id'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="page-login">
     <div class="login-container">
@@ -67,7 +67,7 @@ if (isset($_SESSION['user_id'])) {
                 <p><?= htmlspecialchars($error, ENT_QUOTES | ENT_HTML5) ?></p>
             </div>
             <?php endif; ?>
-            <form method="POST" action="/admin/login.php" novalidate class="login-form">
+            <form method="POST" action="login.php" novalidate class="login-form">
                 <?= csrf_field() ?>
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -86,7 +86,7 @@ if (isset($_SESSION['user_id'])) {
                 <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Se connecter</button>
             </form>
         </div>
-        <div class="back-link"><a href="/index.php"><i class="fas fa-arrow-left"></i> Retour au site</a></div>
+        <div class="back-link"><a href="../index.php"><i class="fas fa-arrow-left"></i> Retour au site</a></div>
     </div>
 </body>
 </html>

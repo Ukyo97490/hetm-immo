@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .contact-section { padding:80px 0; background:white; }
         .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; max-width:1200px; margin:0 auto; padding:0 20px; align-items:start; }
@@ -56,21 +56,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cf_name'])) {
     <nav>
         <div class="logo">H&M <span>Immobilier</span></div>
         <ul class="nav-links">
-            <li><a href="/index.php">Accueil</a></li>
-            <li><a href="/nos-biens.php">Nos Biens</a></li>
-            <li><a href="/services.php">Services</a></li>
-            <li><a href="/a-propos.php">À Propos</a></li>
-            <li><a href="/contact.php" class="active">Contact</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="nos-biens.php">Nos Biens</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="a-propos.php">À Propos</a></li>
+            <li><a href="contact.php" class="active">Contact</a></li>
         </ul>
     </nav>
 </header>
 <div class="mobile-menu">
     <div class="mobile-menu-bar">
-        <div class="mobile-menu-item"><a href="/index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
-        <div class="mobile-menu-item"><a href="/nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
-        <div class="mobile-menu-item"><a href="/services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
-        <div class="mobile-menu-item"><a href="/a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
-        <div class="mobile-menu-item active"><a href="/contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
+        <div class="mobile-menu-item"><a href="index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
+        <div class="mobile-menu-item"><a href="nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
+        <div class="mobile-menu-item"><a href="services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
+        <div class="mobile-menu-item"><a href="a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
+        <div class="mobile-menu-item active"><a href="contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
     </div>
 </div>
 
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cf_name'])) {
             <?php endif; ?>
             <h3>Envoyer un message</h3>
             <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24h.</p>
-            <form method="POST" action="/contact.php" novalidate>
+            <form method="POST" action="contact.php" novalidate>
                 <div class="cf-row">
                     <div class="cf-group"><label>Prénom</label><input type="text" name="cf_name" placeholder="Jean" required></div>
                     <div class="cf-group"><label>Nom</label><input type="text" name="cf_lastname" placeholder="Dupont" required></div>
@@ -138,8 +138,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cf_name'])) {
     <div class="container">
         <div class="footer-links">
             <a href="#">Mentions légales</a>
-            <a href="/contact.php">Contact</a>
-            <a href="/admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
+            <a href="contact.php">Contact</a>
+            <a href="admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
         </div>
         <p class="copyright">© 2025 H&M Immobilier. Tous droits réservés.</p>
     </div>

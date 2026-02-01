@@ -16,7 +16,7 @@ include __DIR__ . '/includes/admin_header.php';
 <!-- Action bar -->
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
     <span style="font-size:14px;color:var(--gray-500);"><?= $result['total'] ?> utilisateur<?= $result['total']!==1?'s':'' ?></span>
-    <a href="/admin/user-form.php" class="btn btn-gold"><i class="fas fa-user-plus"></i> Créer un Utilisateur</a>
+    <a href="user-form.php" class="btn btn-gold"><i class="fas fa-user-plus"></i> Créer un Utilisateur</a>
 </div>
 
 <!-- Table -->
@@ -39,12 +39,12 @@ include __DIR__ . '/includes/admin_header.php';
                     <td style="font-size:12px;color:var(--gray-500);"><?= date('d/m/Y', strtotime($u['created_at'])) ?></td>
                     <td>
                         <div class="action-btns">
-                            <a href="/admin/user-form.php?edit=<?= (int)$u['id'] ?>" class="btn-icon edit" title="Modifier"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="user-form.php?edit=<?= (int)$u['id'] ?>" class="btn-icon edit" title="Modifier"><i class="fas fa-pencil-alt"></i></a>
                             <?php if (!$isSelf): ?>
                             <button class="btn-icon toggle" title="<?= $u['is_active']?'Désactiver':'Activer' ?>"
                                 onclick="confirmAction('<?= $u['is_active']
                                     ? 'Désactiver '.htmlspecialchars($u['first_name'], ENT_QUOTES|ENT_JS_ESCAPE).' ? Il ne pourra plus se connecter.'
-                                    : 'Activer '.htmlspecialchars($u['first_name'], ENT_QUOTES|ENT_JS_ESCAPE).' ? Il pourra se connecter à nouveau.' ?>',()=>{const f=document.createElement('form');f.method='POST';f.action='/admin/user-toggle.php';f.innerHTML='<input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;<?= htmlspecialchars(csrf_generate(), ENT_QUOTES|ENT_HTML5) ?>&quot;><input type=&quot;hidden&quot; name=&quot;user_id&quot; value=&quot;<?= (int)$u['id'] ?>&quot;><input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;<?= $u['is_active']?'deactivate':'activate' ?>&quot;>';document.body.appendChild(f);f.submit();});">
+                                    : 'Activer '.htmlspecialchars($u['first_name'], ENT_QUOTES|ENT_JS_ESCAPE).' ? Il pourra se connecter à nouveau.' ?>',()=>{const f=document.createElement('form');f.method='POST';f.action='user-toggle.php';f.innerHTML='<input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;<?= htmlspecialchars(csrf_generate(), ENT_QUOTES|ENT_HTML5) ?>&quot;><input type=&quot;hidden&quot; name=&quot;user_id&quot; value=&quot;<?= (int)$u['id'] ?>&quot;><input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;<?= $u['is_active']?'deactivate':'activate' ?>&quot;>';document.body.appendChild(f);f.submit();});">
                                 <i class="fas fa-<?= $u['is_active']?'eye-slash':'eye' ?>"></i>
                             </button>
                             <?php else: ?>
@@ -65,11 +65,11 @@ include __DIR__ . '/includes/admin_header.php';
 <!-- Pagination -->
 <?php if ($result['last_page'] > 1): ?>
 <div class="pagination-admin">
-    <?php if ($page > 1): ?><a href="/admin/users.php?page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a><?php endif; ?>
+    <?php if ($page > 1): ?><a href="users.php?page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a><?php endif; ?>
     <?php for ($i=1; $i<=$result['last_page']; $i++): ?>
-    <a href="/admin/users.php?page=<?= $i ?>" class="<?= $i===$page?'active':'' ?>"><?= $i ?></a>
+    <a href="users.php?page=<?= $i ?>" class="<?= $i===$page?'active':'' ?>"><?= $i ?></a>
     <?php endfor; ?>
-    <?php if ($page < $result['last_page']): ?><a href="/admin/users.php?page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a><?php endif; ?>
+    <?php if ($page < $result['last_page']): ?><a href="users.php?page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a><?php endif; ?>
 </div>
 <?php endif; ?>
 

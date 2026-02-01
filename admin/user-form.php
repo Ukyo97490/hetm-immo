@@ -93,7 +93,7 @@ include __DIR__ . '/includes/admin_header.php';
     <h2><?= $isEditing ? 'Modifier l\'Utilisateur' : 'Créer un Nouvel Utilisateur' ?></h2>
     <p class="form-subtitle"><?= $isEditing ? 'Modifiez les informations. Laissez les champs mot de passe vides pour ne pas changer.' : 'Remplissez les informations pour créer un nouveau compte.' ?></p>
 
-    <form method="POST" action="/admin/user-form.php<?= $isEditing ? '?edit='.(int)$editId : '' ?>" novalidate>
+    <form method="POST" action="user-form.php<?= $isEditing ? '?edit='.(int)$editId : '' ?>" novalidate>
         <?= csrf_field() ?>
         <div class="form-grid">
             <div class="form-group">
@@ -134,7 +134,7 @@ include __DIR__ . '/includes/admin_header.php';
             </div>
         </div>
         <div class="form-actions">
-            <a href="/admin/users.php" class="btn btn-outline">Annuler</a>
+            <a href="users.php" class="btn btn-outline">Annuler</a>
             <button type="submit" class="btn btn-gold"><i class="fas fa-<?= $isEditing?'save':'user-plus' ?>"></i> <?= $isEditing?'Mettre à jour':'Créer le Compte' ?></button>
         </div>
     </form>

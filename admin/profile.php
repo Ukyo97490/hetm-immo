@@ -94,7 +94,7 @@ include __DIR__ . '/includes/admin_header.php';
         </div>
         <?php endif; ?>
 
-        <form method="POST" action="/admin/profile.php" novalidate>
+        <form method="POST" action="profile.php" novalidate>
             <?= csrf_field() ?>
             <div style="display:flex;flex-direction:column;gap:18px;margin-top:20px;">
                 <div class="form-group" style="margin-bottom:0;">

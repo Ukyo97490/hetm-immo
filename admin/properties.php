@@ -32,13 +32,13 @@ include __DIR__ . '/includes/admin_header.php';
 <!-- Action bar -->
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
     <span style="font-size:14px;color:var(--gray-500);"><?= $result['total'] ?> bien<?= $result['total']!==1?'s':'' ?> trouvé<?= $result['total']!==1?'s':'' ?></span>
-    <a href="/admin/property-form.php" class="btn btn-gold"><i class="fas fa-plus"></i> Ajouter un Bien</a>
+    <a href="property-form.php" class="btn btn-gold"><i class="fas fa-plus"></i> Ajouter un Bien</a>
 </div>
 
 <!-- Filters -->
 <div class="table-wrapper" style="margin-bottom:20px;">
     <div style="padding:18px 24px;">
-        <form method="GET" action="/admin/properties.php" style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;">
+        <form method="GET" action="properties.php" style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;">
             <div style="flex:1;min-width:180px;">
                 <label style="font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.8px;display:block;margin-bottom:5px;">Recherche</label>
                 <input type="text" name="search" value="<?= htmlspecialchars($searchVal, ENT_QUOTES|ENT_HTML5) ?>" placeholder="Titre, lieu..."
@@ -64,7 +64,7 @@ include __DIR__ . '/includes/admin_header.php';
             </div>
             <button type="submit" class="btn btn-primary" style="padding:9px 20px;"><i class="fas fa-search"></i> Filtrer</button>
             <?php if ($searchVal||$typeVal||$statusVal): ?>
-            <a href="/admin/properties.php" class="btn btn-outline" style="padding:9px 16px;font-size:13px;"><i class="fas fa-times"></i> Réinitialiser</a>
+            <a href="properties.php" class="btn btn-outline" style="padding:9px 16px;font-size:13px;"><i class="fas fa-times"></i> Réinitialiser</a>
             <?php endif; ?>
         </form>
     </div>
@@ -89,7 +89,7 @@ include __DIR__ . '/includes/admin_header.php';
                 <tr>
                     <td style="color:var(--gray-400);font-size:13px;"><?= (int)$p['id'] ?></td>
                     <td>
-                        <a href="/admin/property-form.php?edit=<?= (int)$p['id'] ?>" style="color:var(--primary);font-weight:500;font-size:14px;"><?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_HTML5) ?></a>
+                        <a href="property-form.php?edit=<?= (int)$p['id'] ?>" style="color:var(--primary);font-weight:500;font-size:14px;"><?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_HTML5) ?></a>
                         <?php if ($p['main_image']): ?><br><span style="font-size:11px;color:var(--gray-400);"><i class="fas fa-image"></i> Image</span><?php endif; ?>
                     </td>
                     <td><?= htmlspecialchars(ucfirst($p['property_type']), ENT_QUOTES|ENT_HTML5) ?></td>
@@ -99,9 +99,9 @@ include __DIR__ . '/includes/admin_header.php';
                     <td><span class="badge badge-<?= $p['status'] ?>"><?= ucfirst($p['status']) ?></span></td>
                     <td>
                         <div class="action-btns">
-                            <a href="/admin/property-form.php?edit=<?= (int)$p['id'] ?>" class="btn-icon edit" title="Modifier"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="property-form.php?edit=<?= (int)$p['id'] ?>" class="btn-icon edit" title="Modifier"><i class="fas fa-pencil-alt"></i></a>
                             <button class="btn-icon delete" title="Supprimer"
-                                onclick="confirmAction('Supprimer « <?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_JS_ESCAPE) ?> » ? Cette action est irréversible.',()=>{const f=document.createElement('form');f.method='POST';f.action='/admin/property-delete.php';f.innerHTML='<input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;<?= htmlspecialchars(csrf_generate(), ENT_QUOTES|ENT_HTML5) ?>&quot;><input type=&quot;hidden&quot; name=&quot;property_id&quot; value=&quot;<?= (int)$p['id'] ?>&quot;>';document.body.appendChild(f);f.submit();});">
+                                onclick="confirmAction('Supprimer « <?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_JS_ESCAPE) ?> » ? Cette action est irréversible.',()=>{const f=document.createElement('form');f.method='POST';f.action='property-delete.php';f.innerHTML='<input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;<?= htmlspecialchars(csrf_generate(), ENT_QUOTES|ENT_HTML5) ?>&quot;><input type=&quot;hidden&quot; name=&quot;property_id&quot; value=&quot;<?= (int)$p['id'] ?>&quot;>';document.body.appendChild(f);f.submit();});">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </div>
@@ -125,11 +125,11 @@ $baseParams = http_build_query(array_filter(['type'=>$typeVal,'status'=>$statusV
 $sep = $baseParams ? '&' : '';
 ?>
 <div class="pagination-admin">
-    <?php if ($page > 1): ?><a href="/admin/properties.php?<?= $baseParams ?><?= $sep ?>page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a><?php endif; ?>
+    <?php if ($page > 1): ?><a href="properties.php?<?= $baseParams ?><?= $sep ?>page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a><?php endif; ?>
     <?php for ($i=1; $i<=$result['last_page']; $i++): ?>
-    <a href="/admin/properties.php?<?= $baseParams ?><?= $sep ?>page=<?= $i ?>" class="<?= $i===$page?'active':'' ?>"><?= $i ?></a>
+    <a href="properties.php?<?= $baseParams ?><?= $sep ?>page=<?= $i ?>" class="<?= $i===$page?'active':'' ?>"><?= $i ?></a>
     <?php endfor; ?>
-    <?php if ($page < $result['last_page']): ?><a href="/admin/properties.php?<?= $baseParams ?><?= $sep ?>page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a><?php endif; ?>
+    <?php if ($page < $result['last_page']): ?><a href="properties.php?<?= $baseParams ?><?= $sep ?>page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a><?php endif; ?>
 </div>
 <?php endif; ?>
 

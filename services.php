@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -17,21 +17,21 @@
     <nav>
         <div class="logo">H&M <span>Immobilier</span></div>
         <ul class="nav-links">
-            <li><a href="/index.php">Accueil</a></li>
-            <li><a href="/nos-biens.php">Nos Biens</a></li>
-            <li><a href="/services.php" class="active">Services</a></li>
-            <li><a href="/a-propos.php">À Propos</a></li>
-            <li><a href="/contact.php">Contact</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="nos-biens.php">Nos Biens</a></li>
+            <li><a href="services.php" class="active">Services</a></li>
+            <li><a href="a-propos.php">À Propos</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
 </header>
 <div class="mobile-menu">
     <div class="mobile-menu-bar">
-        <div class="mobile-menu-item"><a href="/index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
-        <div class="mobile-menu-item"><a href="/nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
-        <div class="mobile-menu-item active"><a href="/services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
-        <div class="mobile-menu-item"><a href="/a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
-        <div class="mobile-menu-item"><a href="/contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
+        <div class="mobile-menu-item"><a href="index.php"><i class="fas fa-home"></i><span>Accueil</span></a></div>
+        <div class="mobile-menu-item"><a href="nos-biens.php"><i class="fas fa-building"></i><span>Nos Biens</span></a></div>
+        <div class="mobile-menu-item active"><a href="services.php"><i class="fas fa-handshake"></i><span>Services</span></a></div>
+        <div class="mobile-menu-item"><a href="a-propos.php"><i class="fas fa-users"></i><span>À Propos</span></a></div>
+        <div class="mobile-menu-item"><a href="contact.php"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
     </div>
 </div>
 
@@ -102,7 +102,7 @@
     <div class="container">
         <h2>Prêt à démarrer votre projet ?</h2>
         <p>Contactez-nous dès aujourd'hui pour une consultation gratuite avec l'un de nos experts.</p>
-        <a href="/contact.php" class="cta-btn">Nous contacter</a>
+        <a href="contact.php" class="cta-btn">Nous contacter</a>
     </div>
 </section>
 
@@ -110,8 +110,8 @@
     <div class="container">
         <div class="footer-links">
             <a href="#">Mentions légales</a>
-            <a href="/contact.php">Contact</a>
-            <a href="/admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
+            <a href="contact.php">Contact</a>
+            <a href="admin/login.php" style="color:rgba(255,255,255,0.3);font-size:12px;">Administration</a>
         </div>
         <p class="copyright">© 2025 H&M Immobilier. Tous droits réservés.</p>
     </div>

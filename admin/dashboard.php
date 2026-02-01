@@ -63,7 +63,7 @@ include __DIR__ . '/includes/admin_header.php';
 <div class="table-wrapper" style="margin-bottom:28px;">
     <div class="table-header">
         <h3><i class="fas fa-home" style="color:var(--primary);margin-right:8px;"></i>Derniers Biens Ajoutés</h3>
-        <a href="/admin/properties.php" class="btn btn-outline btn-sm">Voir tous</a>
+        <a href="properties.php" class="btn btn-outline btn-sm">Voir tous</a>
     </div>
     <div class="table-scroll">
         <table>
@@ -71,7 +71,7 @@ include __DIR__ . '/includes/admin_header.php';
             <tbody>
                 <?php foreach ($recentProperties as $p): ?>
                 <tr>
-                    <td><a href="/admin/property-form.php?edit=<?= (int)$p['id'] ?>" style="color:var(--primary);font-weight:500;"><?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_HTML5) ?></a></td>
+                    <td><a href="property-form.php?edit=<?= (int)$p['id'] ?>" style="color:var(--primary);font-weight:500;"><?= htmlspecialchars($p['title'], ENT_QUOTES|ENT_HTML5) ?></a></td>
                     <td><?= htmlspecialchars(ucfirst($p['property_type']), ENT_QUOTES|ENT_HTML5) ?></td>
                     <td><?= htmlspecialchars($p['location'], ENT_QUOTES|ENT_HTML5) ?></td>
                     <td style="font-weight:600;color:var(--gold);"><?= number_format((float)$p['price'],0,',',' ') ?> €</td>
@@ -92,7 +92,7 @@ include __DIR__ . '/includes/admin_header.php';
 <div class="table-wrapper">
     <div class="table-header">
         <h3><i class="fas fa-shield-alt" style="color:var(--primary);margin-right:8px;"></i>Journal d'Audit Récent</h3>
-        <a href="/admin/audit.php" class="btn btn-outline btn-sm">Voir complet</a>
+        <a href="audit.php" class="btn btn-outline btn-sm">Voir complet</a>
     </div>
     <div class="table-scroll">
         <table>

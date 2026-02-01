@@ -37,7 +37,7 @@ include __DIR__ . '/includes/admin_header.php';
 <!-- Filters -->
 <div class="table-wrapper" style="margin-bottom:20px;">
     <div style="padding:16px 24px;">
-        <form method="GET" action="/admin/audit.php" style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;">
+        <form method="GET" action="audit.php" style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;">
             <div style="min-width:200px;">
                 <label style="font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.8px;display:block;margin-bottom:5px;">Filtrer par Action</label>
                 <select name="action" style="padding:9px 12px;border:1px solid var(--gray-300);border-radius:6px;font-size:14px;outline:none;background:white;width:100%;">
@@ -48,7 +48,7 @@ include __DIR__ . '/includes/admin_header.php';
                 </select>
             </div>
             <button type="submit" class="btn btn-primary" style="padding:9px 20px;"><i class="fas fa-search"></i> Filtrer</button>
-            <?php if ($filterAction): ?><a href="/admin/audit.php" class="btn btn-outline" style="padding:9px 16px;font-size:13px;"><i class="fas fa-times"></i> Réinitialiser</a><?php endif; ?>
+            <?php if ($filterAction): ?><a href="audit.php" class="btn btn-outline" style="padding:9px 16px;font-size:13px;"><i class="fas fa-times"></i> Réinitialiser</a><?php endif; ?>
         </form>
     </div>
 </div>
@@ -95,11 +95,11 @@ include __DIR__ . '/includes/admin_header.php';
 <?php if ($lastPage > 1): ?>
 <div class="pagination-admin">
     <?php $pf = $filterAction ? 'action='.urlencode($filterAction).'&' : ''; ?>
-    <?php if ($page > 1): ?><a href="/admin/audit.php?<?= $pf ?>page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a><?php endif; ?>
+    <?php if ($page > 1): ?><a href="audit.php?<?= $pf ?>page=<?= $page-1 ?>"><i class="fas fa-chevron-left"></i></a><?php endif; ?>
     <?php for ($i=1; $i<=$lastPage; $i++): ?>
-    <a href="/admin/audit.php?<?= $pf ?>page=<?= $i ?>" class="<?= $i===$page?'active':'' ?>"><?= $i ?></a>
+    <a href="audit.php?<?= $pf ?>page=<?= $i ?>" class="<?= $i===$page?'active':'' ?>"><?= $i ?></a>
     <?php endfor; ?>
-    <?php if ($page < $lastPage): ?><a href="/admin/audit.php?<?= $pf ?>page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a><?php endif; ?>
+    <?php if ($page < $lastPage): ?><a href="audit.php?<?= $pf ?>page=<?= $page+1 ?>"><i class="fas fa-chevron-right"></i></a><?php endif; ?>
 </div>
 <?php endif; ?>
 

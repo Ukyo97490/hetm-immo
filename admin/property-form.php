@@ -113,7 +113,7 @@ include __DIR__ . '/includes/admin_header.php';
     <h2><?= $isEditing ? 'Modifier le Bien' : 'Créer un Nouveau Bien' ?></h2>
     <p class="form-subtitle"><?= $isEditing ? 'Modifiez les informations du bien ci-dessous.' : 'Remplissez les informations pour ajouter un nouveau bien.' ?></p>
 
-    <form method="POST" action="/admin/property-form.php<?= $isEditing ? '?edit='.(int)$editId : '' ?>" enctype="multipart/form-data" novalidate>
+    <form method="POST" action="property-form.php<?= $isEditing ? '?edit='.(int)$editId : '' ?>" enctype="multipart/form-data" novalidate>
         <?= csrf_field() ?>
         <div class="form-grid">
             <div class="form-group full">
@@ -178,7 +178,7 @@ include __DIR__ . '/includes/admin_header.php';
                     <input type="file" name="main_image" accept="image/*">
                 </div>
                 <?php if ($isEditing && $property['main_image']): ?>
-                <img src="/uploads/<?= htmlspecialchars($property['main_image'], ENT_QUOTES|ENT_HTML5) ?>" alt="Image actuelle" class="image-preview" style="display:block;margin-top:12px;">
+                <img src="../uploads/<?= htmlspecialchars($property['main_image'], ENT_QUOTES|ENT_HTML5) ?>" alt="Image actuelle" class="image-preview" style="display:block;margin-top:12px;">
                 <p style="font-size:11px;color:var(--gray-400);margin-top:6px;"><i class="fas fa-info-circle"></i> Téléchargez une nouvelle image pour remplacer l'actuelle.</p>
                 <?php endif; ?>
             </div>
@@ -199,7 +199,7 @@ include __DIR__ . '/includes/admin_header.php';
             <?php endif; ?>
         </div>
         <div class="form-actions">
-            <a href="/admin/properties.php" class="btn btn-outline">Annuler</a>
+            <a href="properties.php" class="btn btn-outline">Annuler</a>
             <button type="submit" class="btn btn-gold"><i class="fas fa-<?= $isEditing?'save':'plus' ?>"></i> <?= $isEditing?'Mettre à jour':'Créer le Bien' ?></button>
         </div>
     </form>
